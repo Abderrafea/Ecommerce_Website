@@ -20,8 +20,8 @@ module.exports.createOrder = async (req, res) => {
 
       const quantity = item.quantity || 1;
 
-      if (quantity > product.countInStock) {
-        throw new Error(`Insufficient stock for product: ${product.name}. Requested: ${quantity}, In stock: ${product.countInStock}`);
+      if (quantity > product.stock) {
+        throw new Error(`Insufficient stock for product: ${product.name}. Requested: ${quantity}, In stock: ${product.stock}`);
       }
 
       totalPrice += product.price * quantity;
