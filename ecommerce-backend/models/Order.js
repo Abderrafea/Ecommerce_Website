@@ -18,6 +18,8 @@ const orderSchema = mongoose.Schema({
   },
 
   totalPrice: { type: Number, required: true, min: 0 },
+  isDelivered: { type: Boolean, default: false },
+  deliveredAt: { type: Date },
   createdAt: { type: Date, default: Date.now }
 });
 

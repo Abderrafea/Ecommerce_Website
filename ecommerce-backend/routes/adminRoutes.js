@@ -11,6 +11,6 @@ router.get('/dashboard', verifyToken, isAdmin, getAdminDashboard);
 router.get('/users', verifyToken, isAdmin, getAllUsers);
 
 //delete user
-router.delete('/users/:id', deleteUser);
+router.delete('/users/:id', verifyToken, isAdmin, deleteUser);
 
 module.exports = router;
